@@ -1,0 +1,81 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+html, body {
+  height: 100%;
+}
+body {
+  line-height: calc(2px + 2ex + 2px);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+}
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+a:not([class]) {
+  -webkit-text-decoration-skip-ink: all;
+          text-decoration-skip-ink: all;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/* Using below when you use framework */
+/* #root, #__next {
+  isolation: isolate;
+} */
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+html {
+  font-family: 'Amatic SC', cursive;
+}
+
+.one {
+  background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
+}
+.two {
+  background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500);
+}
+.three {
+  background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
+}
+.four {
+  background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
+}
+.five {
+  background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+}
