@@ -63,6 +63,21 @@ p, h1, h2, h3, h4, h5, h6 {
 html {
   font-family: 'Amatic SC', cursive;
 }
+.one {
+  background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
+}
+.two {
+  background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500);
+}
+.three {
+  background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
+}
+.four {
+  background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
+}
+.five {
+  background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+}
 
 .wrapper {
   display: flex;
@@ -94,13 +109,13 @@ p {
   transition: transform 500ms ease;
   text-transform: uppercase;
 }
-p:first-child {
+p:first-of-type {
   transform: translateX(-50vw);
 }
-p:nth-child(2) {
+p:nth-of-type(2) {
   font-size: 1.5em;
 }
-p:nth-child(3) {
+p:last-of-type {
   transform: translateX(50vw);
 }
 input[type="checkbox"]:checked + .panel {
@@ -108,20 +123,20 @@ input[type="checkbox"]:checked + .panel {
   font-size: calc(2 * var(--basic-font-size));
 }
 input[type="checkbox"]:checked + .panel > p:is(:first-child, :nth-child(3)) {
-  transform: translateX(0);
+  transform: translate(0, 0);
 }
-.one {
-  background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
-}
-.two {
-  background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500);
-}
-.three {
-  background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
-}
-.four {
-  background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
-}
-.five {
-  background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+
+@media (min-width: 976px) {
+  .wrapper {
+    flex-direction: row;
+  }
+  .panel {
+    flex-direction: column;
+  }
+  p:first-of-type {
+    transform: translate(0, -50vh);
+  }
+  p:last-of-type {
+    transform: translate(0, 50vh);
+  }
 }
