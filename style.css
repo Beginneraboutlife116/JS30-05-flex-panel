@@ -58,11 +58,6 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
-
-html {
-  font-family: 'Amatic SC', cursive;
-}
 .one {
   background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
 }
@@ -82,23 +77,24 @@ html {
 .wrapper {
   display: flex;
   flex-direction: column;
-  background-color: hsl(0, 0%, 90%);
   height: 100vh;
 }
 input[type="checkbox"] {
   display: none;
 }
 .panel {
-  --basic-font-size: clamp( 0.75rem, 2.6vw,1.25rem);
+  --basic-font-size: clamp( 0.75rem, 2.9vw, 1.5rem);
 
   display: flex;
   justify-content: space-around;
   flex: 1;
   background-size: cover;
   background-position: 50% 50%;
+  background-color: hsl(47, 100%, 50%);
   color: hsl(0, 0%, 100%);
   align-items: center;
   font-size: var(--basic-font-size);
+  box-shadow: inset 0 0 1rem 0 hsl(0, 0%, 25%);
   transition: 
     font-size 700ms cubic-bezier(0.61,-0.19, 0.7,-0.11),
     flex 700ms cubic-bezier(0.61,-0.19, 0.7,-0.11),
@@ -108,6 +104,8 @@ p {
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
   transition: transform 500ms ease;
   text-transform: uppercase;
+  font-family: 'Amatic SC', cursive;
+  user-select: none;
 }
 p:first-of-type {
   transform: translateX(-50vw);
@@ -122,7 +120,7 @@ input[type="checkbox"]:checked + .panel {
   flex: 3;
   font-size: calc(2 * var(--basic-font-size));
 }
-input[type="checkbox"]:checked + .panel > p:is(:first-child, :nth-child(3)) {
+input[type="checkbox"]:checked + .panel > p:is(:first-of-type, :last-of-type) {
   transform: translate(0, 0);
 }
 
@@ -136,7 +134,13 @@ input[type="checkbox"]:checked + .panel > p:is(:first-child, :nth-child(3)) {
   p:first-of-type {
     transform: translate(0, -50vh);
   }
+  p:nth-of-type(2) {
+    font-size: 2em;
+  }
   p:last-of-type {
     transform: translate(0, 50vh);
+  }
+  input[type="checkbox"]:checked + .panel {
+    flex: 5;
   }
 }
